@@ -57,7 +57,7 @@ let message = "Review Submitted";
 if (books[req.params.isbn]["reviews"][req.session.username]){
     message = "Review Updated";
 }
-books[req.params.isbn]["reviews"][req.session.username] = req.body.review;
+books[req.params.isbn]["reviews"][req.session.username] = req.query.review;
 res.send(message);
 });
 
